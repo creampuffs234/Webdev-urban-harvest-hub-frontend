@@ -1,5 +1,5 @@
 import Card from "../Components/Card";
-import Catogoryinformation from "../Data/Catogorystuff";
+import Catogoryinformation from "../Data/catogorystuff";
 
 const Categories = () => {
     return (

@@ -1,6 +1,6 @@
 
 import { useParams, Link } from "react-router-dom";
-import Catogoryinformation from "../Data/Catogorystuff";
+import Catogoryinformation from "../Data/catogorystuff";
 import { useEffect, useState } from "react";
 
 const CategoryDetail = () => {
