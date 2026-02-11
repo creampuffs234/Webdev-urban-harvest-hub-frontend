@@ -5,6 +5,31 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    let updated = [...products];
+
+    // Search filter
+    if (searchTerm) {
+      updated = updated.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Sorting
+    if (sortOrder === "low") {
+      updated.sort((a, b) => a.price - b.price);
+    }
+
+    if (sortOrder === "high") {
+      updated.sort((a, b) => b.price - a.price);
+    }
+
+    setFilteredProducts(updated);
+  }, [searchTerm, sortOrder, products]);
 
   useEffect(() => {
     setLoading(true);
@@ -40,11 +65,31 @@ const ProductList = () => {
     <section className="p-20">
       <h1 className="text-5xl mb-10 text-center border p-6 m-10 ">Our Products</h1>
 
-      {products.length === 0 ? (
+      {/* Search and Sort UI */}
+      <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 px-10">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="p-3 border-2 border-black rounded-lg w-full md:w-1/3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none transition-all"
+        />
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          className="p-3 border-2 border-black rounded-lg w-full md:w-1/4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none focus:translate-x-1 focus:translate-y-1 focus:shadow-none transition-all bg-white"
+        >
+          <option value="">Sort by</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
+
+      {filteredProducts.length === 0 ? (
         <p className="text-center text-xl">No products found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <div
               key={product.id}
               className="border rounded p- shadow-lg hover:shadow-2xl transition bg-oreyelo h-[50vh] "

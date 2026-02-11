@@ -60,7 +60,7 @@ const CategoryDetail = () => {
     };
 
     return (
-        <div className="bg-white/80 p-6 rounded-xl shadow-lg max-w-3xl mx-auto mt-20 mb-20 ">
+        <div className="bg-black p-6 rounded-xl shadow-lg max-w-3xl mx-auto mt-20 mb-20 ">
             <section className="p-8 rounded-xl bg-yellow-200 shadow-2xl">
                 <h3 className="text-xl font-semibold mb-2 ">
                     🌱 Sustainability Quote
