@@ -62,11 +62,11 @@ const ProductList = () => {
   if (error) return <p className="p-20 text-center text-xl text-red-500">Error: {error}</p>;
 
   return (
-    <section className="p-20">
-      <h1 className="text-5xl mb-10 text-center border p-6 m-10 ">Our Products</h1>
+    <section className="p-4 pt-24 md:p-20 md:pt-32">
+      <h1 className="text-3xl md:text-5xl  md:mb-10 text-center border p-4 md:p-10 m-4 md:m-10 ">Our Products</h1>
 
       {/* Search and Sort UI */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 px-10">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-10 gap-4 px-4 md:px-10">
         <input
           type="text"
           placeholder="Search products..."
@@ -85,21 +85,22 @@ const ProductList = () => {
         </select>
       </div>
 
+      {/*the card ui section*/}
       {filteredProducts.length === 0 ? (
         <p className="text-center text-xl">No products found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-3  md:gap-20">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="border rounded p- shadow-lg hover:shadow-2xl transition bg-oreyelo h-[50vh] "
+              className="border rounded p-4 shadow-lg hover:shadow-2xl transition bg-oreyelo md:h-[50vh] flex flex-col justify-between"
             >
               <img
                 src={product.image || "https://placehold.co/400x300"}
                 alt={product.name}
-                className="w-full h-[30vh] object-cover mb-4 rounded shadow-lg hover:shadow-2xl transition-all duration-300 border-4 border-black"
+                className="w-full h-[25vh] md:h-[30vh] object-cover mb-4 rounded shadow-lg border-4 border-black"
               />
-              <section className="p-8 m-10 rounded bg-black/80">
+              <section className="p-5 rounded bg-black/80">
                 <div className="flex justify-between items-start mb-2 ">
                   <h2 className="text-2xl font-bold p-2 ">{product.name}</h2>
                   <span className="text-xl font-semibold bg-green-100 px-3 py-1 rounded text-chelsea-cucumber">

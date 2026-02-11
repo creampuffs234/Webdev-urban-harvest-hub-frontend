@@ -45,6 +45,7 @@ const ProductDetail = () => {
             body: JSON.stringify({
                 email,
                 name,
+                image: product.image,
                 product_id: product.id,
 
             }),
@@ -66,8 +67,8 @@ const ProductDetail = () => {
     };
 
     return (
-        <div className="p-10">
-            <section className="mt-20 border p-10 bg-gray-600 rounded-lg shadow-2xl">
+        <div className="p-10 pt-28">
+            <section className="mt-10 border p-10 bg-gray-600 rounded-lg shadow-2xl">
                 <h1 className="text-5xl text-white font-bold mb-6">
                     {product.name}
                 </h1>

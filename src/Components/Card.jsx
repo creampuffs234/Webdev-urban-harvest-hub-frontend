@@ -12,9 +12,9 @@ const Card = ({ CatogoryDetails }) => {
          {/* deatiled top card */}
       <div className="
         absolute bottom-6 left-6
-       bg-white/80 px-6 py-6
+       bg-oreyelo/85 px-6 py-6
         rounded-xl shadow-xl
-        hover:bg-oreyelo
+        hover:bg-black
         transition-all duration-300
       ">
              <Link

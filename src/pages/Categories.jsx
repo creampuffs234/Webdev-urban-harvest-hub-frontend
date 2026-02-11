@@ -3,7 +3,7 @@ import Catogoryinformation from "../Data/catogorystuff";
 
 const Categories = () => {
     return (
-        <>
+        <div className="pt-24">
             {/* Hero */}
             <section>
                 <img
@@ -32,7 +32,8 @@ const Categories = () => {
                     <Card key={item.path} CatogoryDetails={item} />
                 ))}
             </section>
-        </>
+        </section>
+        </div >
     );
 };
 

@@ -5,10 +5,10 @@ import Navbar from './Components/Navbar';
 import Home from './pages/Home';
 import ProductList from "./pages/ProductList";
 import Categories from "./pages/Categories";
-import CategoryDetail from "./pages/CategoryDetail";
 import Footer from './Components/Footer';
 import Subscribe from "./pages/Subscribe";
 import ProductDetail from "./pages/ProductDetail";
+import Admin from "./pages/Admin";
 
 // import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
@@ -31,6 +31,7 @@ function App() {
 
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/admin" element={<Admin />} />
 
 
         </Routes>

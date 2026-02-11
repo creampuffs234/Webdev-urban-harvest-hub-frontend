@@ -34,7 +34,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-20 mb-20 bg-white p-10 rounded-xl shadow-lg">
+    <div className="max-w-xl mx-auto mt-32 p-10 bg-white rounded-xl shadow-lg">
       <h1 className="text-4xl mb-6 font-bold">
         Subscribe to Urban Harvest Hub
       </h1>
