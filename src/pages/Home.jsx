@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import QuoteGenerator from "../Components/QuoteGenerator";
+
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ const Home = () => {
           aria-labelledby="hero-heading"
         >
           <div className="max-w-xl">
+            <QuoteGenerator />
+
             <h1
               id="hero-heading"
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-atlantis"
@@ -73,7 +77,7 @@ const Home = () => {
           {/* CARD 3 */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
             <div className="w-12 h-12 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-chelsea-cucumber">
-              
+
             </div>
             <h3 className="text-xl font-bold mb-3">Eco Products</h3>
             <p className="text-gray-600 leading-relaxed flex-grow">

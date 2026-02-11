@@ -41,7 +41,7 @@ const Admin = () => {
     };
 
     return (
-        <div className="p-10 m-20 pt-32">
+        <div className="p-10 m-20 pt-32 ">
             <h1 className="text-3xl mb-6">Admin Panel</h1>
 
             {/* Add Form */}
@@ -64,7 +64,7 @@ const Admin = () => {
                     onChange={(e) => setPrice(e.target.value)}
                     className="border p-2 mr-2"
                 />
-                <button onClick={handleAdd} className="bg-oreyelo px-4 py-2 rounded">
+                <button onClick={handleAdd} className="bg-oreyelo px-4 py-2 rounded text-">
                     Add Product
                 </button>
             </div>
@@ -91,9 +91,9 @@ const Admin = () => {
             {/* Bookings Table */}
             <h2 className="text-2xl mt-10 mb-4 font-bold border-b-2 border-chelsea-cucumber inline-block">Bookings</h2>
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-gray-500 border border-gray-300">
                     <thead>
-                        <tr className="bg-gray-100">
+                        <tr className="bg-gray-500">
                             <th className="py-2 px-4 border-b text-left">ID</th>
                             <th className="py-2 px-4 border-b text-left">Product ID</th>
                             <th className="py-2 px-4 border-b text-left">Name</th>
@@ -103,7 +103,7 @@ const Admin = () => {
                     </thead>
                     <tbody>
                         {bookings.map(booking => (
-                            <tr key={booking.id} className="hover:bg-gray-50">
+                            <tr key={booking.id} className="bg-gray-500">
                                 <td className="py-2 px-4 border-b">{booking.id}</td>
                                 <td className="py-2 px-4 border-b">{booking.product_id}</td>
                                 <td className="py-2 px-4 border-b">{booking.name}</td>
@@ -118,9 +118,9 @@ const Admin = () => {
             {/* Subscriptions Table */}
             <h2 className="text-2xl mt-10 mb-4 font-bold border-b-2 border-chelsea-cucumber inline-block">Subscriptions</h2>
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full  border border-gray-300 bg-gray-500">
                     <thead>
-                        <tr className="bg-gray-100">
+                        <tr className="bg-gray-500">
                             <th className="py-2 px-4 border-b text-left">ID</th>
                             <th className="py-2 px-4 border-b text-left">Email</th>
                             <th className="py-2 px-4 border-b text-left">Plan</th>
@@ -129,7 +129,7 @@ const Admin = () => {
                     </thead>
                     <tbody>
                         {subscriptions.map(sub => (
-                            <tr key={sub.id} className="hover:bg-gray-50">
+                            <tr key={sub.id} className="hover:bg-gray-500">
                                 <td className="py-2 px-4 border-b">{sub.id}</td>
                                 <td className="py-2 px-4 border-b">{sub.email}</td>
                                 <td className="py-2 px-4 border-b">{sub.plan}</td>

@@ -14,23 +14,13 @@ const Categories = () => {
             </section>
 
             {/* Cards */}
-            <section
-                className="
-
-          bg-chelsea-cucumber
-          grid grid-cols-2
-          md:grid-cols-2
-          gap-20
-          px-20 py-20
-          
-          ml-10
-          
-        "
-            >
-
-                {Catogoryinformation.map((item) => (
-                    <Card key={item.path} CatogoryDetails={item} />
-                ))}
+            {/* Cards */}
+            <section className="bg-chelsea-cucumber py-16 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    {Catogoryinformation.map((item) => (
+                        <Card key={item.path} CatogoryDetails={item} />
+                    ))}
+                </div>
             </section>
 
         </div >
