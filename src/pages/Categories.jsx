@@ -32,7 +32,7 @@ const Categories = () => {
                     <Card key={item.path} CatogoryDetails={item} />
                 ))}
             </section>
-        </section>
+
         </div >
     );
 };
