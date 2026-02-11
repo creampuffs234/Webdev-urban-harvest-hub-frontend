@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Helvetica'), url('./fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@layer utilities{
+    /*make one herr*/
+}
+
+@layer components{
+    /*here too*/
+}
+
+body {
+    @apply text-atlantis font-helvetica;
+}
