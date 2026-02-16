@@ -26,7 +26,7 @@ const Home = () => {
       {/* page wrapper */}
 
       <div className="px-4 sm:px-6 lg:px-12">
-         <section
+        <section
           className="relative bg-oreyelo rounded-[2rem] text-chelsea-cucumber overflow-hidden my-12 sm:my-16 p-6 sm:p-8 lg:p-12 border-2"
           aria-labelledby="hero-heading"
         >

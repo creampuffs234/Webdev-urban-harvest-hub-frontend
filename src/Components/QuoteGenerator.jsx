@@ -14,16 +14,17 @@ const QuoteGenerator = () => {
             if (!response.ok) throw new Error('Failed to fetch from backend');
             const data = await response.json();
 
-            if (data.success) {
+            // If we got a quote (even if success is false/fallback), show it
+            if (data.quote) {
                 setQuote({ text: data.quote, author: data.author });
                 localStorage.setItem('dailyQuote', JSON.stringify({ text: data.quote, author: data.author }));
             } else {
-                throw new Error('API returned unsuccessful response');
+                throw new Error('No quote data received');
             }
         } catch (err) {
             console.error("Error fetching quote:", err);
             setError("Using cached/offline quote");
-            // Fallback to cache or default if fetch fails
+           
             const cached = localStorage.getItem('dailyQuote');
             if (cached) {
                 setQuote(JSON.parse(cached));
