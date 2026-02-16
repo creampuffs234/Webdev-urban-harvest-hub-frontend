@@ -9,8 +9,9 @@ const QuoteGenerator = () => {
         setLoading(true);
         setError(null);
         try {
+            // Fetch from backend API
             const response = await fetch('/api/quotes');
-            if (!response.ok) throw new Error('Failed to fetch');
+            if (!response.ok) throw new Error('Failed to fetch from backend');
             const data = await response.json();
 
             if (data.success) {
@@ -21,11 +22,16 @@ const QuoteGenerator = () => {
             }
         } catch (err) {
             console.error("Error fetching quote:", err);
-            setError("Using offline quote");
-            // Fallback to cache
+            setError("Using cached/offline quote");
+            // Fallback to cache or default if fetch fails
             const cached = localStorage.getItem('dailyQuote');
             if (cached) {
                 setQuote(JSON.parse(cached));
+            } else {
+                setQuote({
+                    text: "Sustainability begins with small daily actions.",
+                    author: "Urban Harvest Hub"
+                });
             }
         } finally {
             setLoading(false);
@@ -38,8 +44,8 @@ const QuoteGenerator = () => {
         if (cached) {
             setQuote(JSON.parse(cached));
             setLoading(false);
-            // Optional: fetch fresh in background
-            // fetchQuote();
+            // Fetch fresh in background to update cache
+            fetchQuote();
         } else {
             fetchQuote();
         }

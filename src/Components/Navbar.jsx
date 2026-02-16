@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const NAV_LINKS = [
@@ -9,6 +9,22 @@ const NAV_LINKS = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <div className="flex justify-end w-full bg-transparent">
@@ -42,6 +58,15 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        {/* Dark Mode Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors mx-4 text-2xl"
+          aria-label="Toggle Dark Mode"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (

@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import QuoteGenerator from "../Components/QuoteGenerator";
+import homedetails from "../Data/homedetails.json";
+
 
 
 const Home = () => {
+  // Safe getter function to handle missing data
+  const getText = (key) => {
+    const item = homedetails.find((d) => d[key]);
+    return item ? item[key] : "Content currently unavailable.";
+  };
+
   return (
     <div className="animate-fade-in">
-      {/* HERO IMAGE */}
-      <section className="border-b-2 border-white">
+      {/* hero image section */}
+         <section className="border-b-2 border-white">
         <img
           src="/Hero-home-image.webp"
           alt="Urban Harvest Hub hero image"
@@ -15,10 +23,10 @@ const Home = () => {
         />
       </section>
 
-      {/* PAGE CONTENT WRAPPER */}
+      {/* page wrapper */}
+
       <div className="px-4 sm:px-6 lg:px-12">
-        {/* INTRO SECTION */}
-        <section
+         <section
           className="relative bg-oreyelo rounded-[2rem] text-chelsea-cucumber overflow-hidden my-12 sm:my-16 p-6 sm:p-8 lg:p-12 border-2"
           aria-labelledby="hero-heading"
         >
@@ -33,8 +41,7 @@ const Home = () => {
             </h1>
 
             <p className="text-base sm:text-lg opacity-90 mb-8">
-              Discover sustainable products, eco-friendly initiatives, and
-              community-driven solutions designed for modern urban living.
+              {getText("description0")}
             </p>
 
             <div className="flex justify-center sm:justify-start">
@@ -45,44 +52,39 @@ const Home = () => {
           </div>
         </section>
 
-        {/* FEATURE CARDS */}
+        {/*card section*/}
         <section
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
           aria-label="Feature details"
         >
-          {/* CARD 1 */}
+          
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
             <div className="w-12 h-12 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-chelsea-cucumber">
               🌿
             </div>
             <h3 className="text-xl font-bold mb-3">Sustainable Living</h3>
             <p className="text-gray-600 leading-relaxed flex-grow">
-              Practical solutions and ideas to support environmentally
-              responsible urban lifestyles.
+              {getText("description1")}
             </p>
           </div>
 
-          {/* CARD 2 */}
+      
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
             <div className="w-12 h-12 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-chelsea-cucumber">
               🤝
             </div>
             <h3 className="text-xl font-bold mb-3">Community Hub</h3>
             <p className="text-gray-600 leading-relaxed flex-grow">
-              Connect with local communities through workshops, events, and
-              shared sustainability goals.
+              {getText("description2")}
             </p>
           </div>
 
-          {/* CARD 3 */}
+          
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-            <div className="w-12 h-12 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-chelsea-cucumber">
-
-            </div>
+            <div className="w-12 h-12 bg-green-100 rounded-lg mb-4 flex items-center justify-center text-chelsea-cucumber"></div>
             <h3 className="text-xl font-bold mb-3">Eco Products</h3>
             <p className="text-gray-600 leading-relaxed flex-grow">
-              Browse eco-friendly products designed and curated by our urban
-              community.
+              {getText("description3")}
             </p>
             <Link
               to="/products"
@@ -101,8 +103,8 @@ const Home = () => {
             </h2>
             <p className="text-gray-600 mb-6">
               Urban Harvest Hub aims to empower individuals and communities to
-              adopt sustainable practices through accessible digital
-              experiences and eco-conscious initiatives.
+              adopt sustainable practices through accessible digital experiences
+              and eco-conscious initiatives.
             </p>
             <ul className="space-y-3 text-gray-700">
               <li>✅ Promote sustainable living</li>

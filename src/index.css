@@ -9,14 +9,14 @@
     font-style: normal;
 }
 
-@layer utilities{
-    /*make one herr*/
+@layer utilities {
+    /*make one here*/
 }
 
-@layer components{
+@layer components {
     /*here too*/
 }
 
 body {
-    @apply text-atlantis font-helvetica;
+    @apply text-atlantis font-helvetica bg-white text-black transition-colors duration-300;
 }

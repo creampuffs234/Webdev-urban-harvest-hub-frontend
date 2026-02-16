@@ -25,7 +25,6 @@ dist-ssr
 *.sw?
 
 # User requested ignores for frontend deployment
-backend/
 node_modules/
 dist/
 .env

@@ -69,7 +69,7 @@ const Admin = () => {
                 </button>
             </div>
 
-            {/* Product List */}
+            {/*   Product List */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {products.map(product => (
                     <div key={product.id} className="border p-4 mb-2 rounded shadow-md bg-white">
