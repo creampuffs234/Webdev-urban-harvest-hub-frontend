@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="absolute top-[9vh] left-0 w-full bg-white/95 backdrop-blur-md flex flex-col items-center space-y-8 py-10 md:hidden border-b-2 border-chelsea-cucumber shadow-2xl">
+          <div className="absolute top-[9vh] left-0 w-full bg-white/95 backdrop-blur-md flex flex-col items-center space-y-8 py-10 md:hidden border-b-2 border-atlantis shadow-2xl">
             {NAV_LINKS.map(({ path, label }) => (
               <Link
                 key={path}
